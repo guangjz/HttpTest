@@ -28,6 +28,7 @@ public class httpsend {
         long starttime = 0;
         long endtime = 0;
         HttpPost method = new HttpPost(url);
+//        method.addHeader("Content-Type", "application/json;charset=utf-8");
         try {
 //            method.setEntity(new UrlEncodedFormEntity((List<? extends NameValuePair>) paras,HTTP.UTF_8));
             starttime = System.currentTimeMillis();
