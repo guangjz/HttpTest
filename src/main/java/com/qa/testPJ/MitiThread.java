@@ -13,6 +13,7 @@ public class MitiThread implements Runnable {
         try {
             json.httpPost();
         } catch (Exception var2) {
+
             var2.printStackTrace();
         }
 
@@ -20,17 +21,13 @@ public class MitiThread implements Runnable {
 
     public static void main(String[] args) throws Throwable {
         MitiThread test = new MitiThread();
-        Thread thread1 = new Thread(test);
-        Thread thread2 = new Thread(test);
-        Thread thread3 = new Thread(test);
-        Thread thread4 = new Thread(test);
-        Thread thread5 = new Thread(test);
-        Thread thread6 = new Thread(test);
-        thread1.start();
-        thread2.start();
-        thread3.start();
-        thread4.start();
-        thread5.start();
-        thread6.start();
+        Thread thread [] = new Thread [600];
+
+        for(int i=0;i<200;i++){
+
+            thread[i]=new Thread(test);
+
+            thread[i].start();
+        }
     }
 }
