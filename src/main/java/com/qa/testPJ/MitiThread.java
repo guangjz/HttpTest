@@ -21,13 +21,23 @@ public class MitiThread implements Runnable {
 
     public static void main(String[] args) throws Throwable {
         MitiThread test = new MitiThread();
-        Thread thread [] = new Thread [600];
+        Thread thread [] = new Thread [1000];
 
-        for(int i=0;i<200;i++){
+        long time1=System.currentTimeMillis();
+
+
+        for(int i=0;i<100;i++){
 
             thread[i]=new Thread(test);
 
             thread[i].start();
+
+
         }
+
+
+        long time2=System.currentTimeMillis();
+        System.out.println("当前程序耗时："+(time2-time1)+"ms");
+
     }
 }
